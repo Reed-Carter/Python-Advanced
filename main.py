@@ -1,4 +1,3 @@
-from typing import ByteString
 from faker import Faker
 import json
 
@@ -17,7 +16,7 @@ def remove_dups(list_with_dups):
 color_list_no_dups = remove_dups(color_list)
 color_dict = {color: len(color) for color in color_list_no_dups}
 
-with open("./data/colors.json", "w+") as json_colors:
+with open("./data/colors.json", "w") as json_colors:
   json.dump(color_dict, json_colors)
 
 with open("./data/colors.json", "r") as json_colors_short:
